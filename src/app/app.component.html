@@ -1,7 +1,10 @@
 <h1>{{title}}</h1>
 
-
-
+<ul>
+  <li *ngFor="let torneo of torneos.elementos">
+    {{torneo.idMz}} - {{torneo.nombre}}
+  </li>
+</ul>
 
 
 
