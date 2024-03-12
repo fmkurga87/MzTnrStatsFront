@@ -18,13 +18,23 @@
                     <a class="nav-link disabled" aria-disabled="true">Admin</a>
                 </li>
             </ul>
-            <form class="d-flex">
+            <form #loginForm="ngForm" class="d-flex" (ngSubmit)="login()" autocomplete="off">
                 <!-- 
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
                 -->
-                <input class="form-control me-2" type="text" placeholder="Usuario">
-                <input class="form-control me-2" type="password" placeholder="Pass">
+                <input 
+                    name="username" 
+                    [(ngModel)]="model.username" 
+                    class="form-control me-2" 
+                    type="text" 
+                    placeholder="Usuario">
+                <input 
+                    name="password" 
+                    [(ngModel)]="model.password" 
+                    class="form-control me-2" 
+                    type="password" 
+                    placeholder="Pass">
                 <button class="btn btn-outline-success" type="submit">Ingresar</button>
             </form>
         </div> <!-- div del responsive (quitar si se quita lo de mas arriba) -->
