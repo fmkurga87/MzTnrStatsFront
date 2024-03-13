@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
   model: any = {}
-
+  loggedIn = false;
 
   constructor() { }
+  // TODO: Habria que agregar un servicio para loguear
 
   ngOnInit(): void {
     
