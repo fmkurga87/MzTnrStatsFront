@@ -27,18 +27,8 @@ export class TorneosService {
     }
     
     return this.http.get(this.baseUrl + 'Torneos/Mock/10');
+    // TODO: Ver eltema del modelo (en el ejemplo: turnos, agregar para torneos)
+    //   return this.http.get<turnos>(this.baseUrl + 'Turnos/Dia', httpOptions);
   }
-
-  // getTurns(turnForGetDto: turnForGetDto){
-    
-  //   const httpOptions = {
-  //     params: new HttpParams()
-  //     .set('Dia', turnForGetDto.dia)
-  //     .set('MedicoId', turnForGetDto.MedicoId)
-  //     .set('CentroDeSaludId', turnForGetDto.CentroDeSaludId),
-  //   }
-          
-  //   return this.http.get<turnos>(this.baseUrl + 'Turnos/Dia', httpOptions);
-  // }
 
 }
