@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
   constructor(private http: HttpClient, private torneosService: TorneosService) {}
   
   ngOnInit(): void {
-    this.torneosService.getTorneosMock(1).subscribe({
+    this.torneosService.getTorneos(this.getTorneosParms).subscribe({
       next: response => this.torneos2 = response,
       error: error => console.log(error),
       complete: () => console.log('Request a GET equipos completado'),
