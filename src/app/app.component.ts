@@ -9,7 +9,7 @@ import { BuscarTorneosRequest } from './_models/torneos/buscarTorneosRequest';
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit {
-  title = 'MzTnrStats SPA';
+  title = 'MzTNR-Stats';
   torneos: any;
   torneos2: any;
 
@@ -26,7 +26,10 @@ export class AppComponent implements OnInit {
   
   ngOnInit(): void {
     this.torneosService.getTorneos(this.getTorneosParms).subscribe({
-      next: response => this.torneos2 = response,
+      next: response =>{ 
+                          this.torneos2 = response,
+                          console.log(response)
+                        },
       error: error => console.log(error),
       complete: () => console.log('Request a GET equipos completado'),
     })
