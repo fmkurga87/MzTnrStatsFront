@@ -9,7 +9,7 @@ import { BuscarTorneosRequest } from './_models/torneos/buscarTorneosRequest';
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit {
-  title = 'MzTNR-Stats';
+  title = 'MzTNR Stats';
   torneos: any;
   torneos2: any;
 
