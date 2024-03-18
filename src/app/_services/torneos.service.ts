@@ -2,6 +2,8 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BuscarTorneosRequest } from '../_models/torneos/buscarTorneosRequest';
 import { Torneos } from '../_models/torneos/torneos';
+import { Observable } from 'rxjs';
+import { ObtenerTorneoResponse } from '../_models/torneos/obtenerTorneoResponse';
 
 @Injectable({
   providedIn: 'root'
@@ -31,6 +33,10 @@ export class TorneosService {
     return this.http.get<Torneos>(this.baseUrl + 'Torneos', httpOptions);
     // TODO: Ver eltema del modelo (en el ejemplo: turnos, agregar para torneos)
     //   return this.http.get<turnos>(this.baseUrl + 'Turnos/Dia', httpOptions);
+  }
+
+  getTorneo(id : number): Observable<ObtenerTorneoResponse> {
+    return this.http.get<ObtenerTorneoResponse>(this.baseUrl + 'Torneos/' + id);
   }
 
 }
