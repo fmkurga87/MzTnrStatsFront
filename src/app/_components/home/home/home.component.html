@@ -1,0 +1,14 @@
+<h1 style="text-align:center">MzTnr Stats!</h1>
+<p></p>
+<h3 style="text-align:center">Torneos en curso:</h3>
+
+<div class="row mt-5">
+<!-- <div *ngFor="let torneo of torneos2.elementos" class="col-lg-2 col-md-3 col-sm-6"> -->
+    <!-- <app-player-card [player]="player"></app-player-card> -->
+    <div *ngFor="let torneo of torneos.elementos">
+    <div style="text-align:center">
+        <img class="card-img-top" src="{{torneo.urlImagen}}" alt="{{torneo.nombre}}">
+        {{torneo.idMz}} - {{torneo.nombre}}
+    </div>
+    </div>
+</div>

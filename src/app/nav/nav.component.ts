@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -9,8 +10,9 @@ export class NavComponent implements OnInit {
   model: any = {}
   loggedIn = false;
 
-  constructor() { }
-  // TODO: Habria que agregar un servicio para loguear
+  constructor(private router : Router) { }
+  
+  // TODO: Habria que agregar un servicio para loguear (ver clase 66 para router)
 
   ngOnInit(): void {
     

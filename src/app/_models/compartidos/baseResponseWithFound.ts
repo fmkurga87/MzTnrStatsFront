@@ -1,5 +1,5 @@
-import { baseResponse } from "./BaseResponse";
+import { baseResponse } from "./baseResponse";
 
 export interface BaseResponseWithFound extends baseResponse{
-    encontado : boolean,
+    encontrado : boolean,
 }

@@ -13,6 +13,7 @@ import { EquipoListComponent } from './_components/equipos/equipo-list/equipo-li
 import { EquipoDetailComponent } from './_components/equipos/equipo-detail/equipo-detail.component';
 import { EquipoCardComponent } from './_components/equipos/equipo-card/equipo-card.component';
 import { TorneoDetailComponent } from './_components/torneos/torneo-detail/torneo-detail.component';
+import { HomeComponent } from './_components/home/home/home.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { TorneoDetailComponent } from './_components/torneos/torneo-detail/torne
     EquipoListComponent,
     EquipoDetailComponent,
     EquipoCardComponent,
-    TorneoDetailComponent
+    TorneoDetailComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
