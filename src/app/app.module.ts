@@ -14,6 +14,7 @@ import { EquipoDetailComponent } from './_components/equipos/equipo-detail/equip
 import { EquipoCardComponent } from './_components/equipos/equipo-card/equipo-card.component';
 import { TorneoDetailComponent } from './_components/torneos/torneo-detail/torneo-detail.component';
 import { HomeComponent } from './_components/home/home/home.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,9 @@ import { HomeComponent } from './_components/home/home/home.component';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-bottom-right'
+    }),
     FormsModule
   ],
   providers: [],

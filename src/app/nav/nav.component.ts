@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-nav',
@@ -10,7 +11,7 @@ export class NavComponent implements OnInit {
   model: any = {}
   loggedIn = false;
 
-  constructor(private router : Router) { }
+  constructor(private router : Router, private toastr : ToastrService) { }
   
   // TODO: Habria que agregar un servicio para loguear (ver clase 66 para router)
 
