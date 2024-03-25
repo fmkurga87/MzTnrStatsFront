@@ -4,12 +4,13 @@ import { BuscarTorneosRequest } from '../_models/torneos/buscarTorneosRequest';
 import { Torneos } from '../_models/torneos/torneos';
 import { Observable } from 'rxjs';
 import { ObtenerTorneoResponse } from '../_models/torneos/obtenerTorneoResponse';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TorneosService {
-  baseUrl = 'http://localhost:5117/api/';
+  baseUrl = environment.apiUrl;
 
     
   constructor(private http: HttpClient) { }
