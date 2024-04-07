@@ -23,6 +23,6 @@ export class EquiposService {
       .set('EntidadOrdenamiento', 1),
     }
     
-    return this.http.get<BuscarEquiposResponse>(this.baseUrl + 'Torneos', httpOptions);
+    return this.http.get<BuscarEquiposResponse>(this.baseUrl + 'Equipos', httpOptions);
   }
 }

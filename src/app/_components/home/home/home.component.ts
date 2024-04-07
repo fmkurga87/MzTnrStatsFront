@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit{
                           console.log(response)
                         },
       error: error => console.log(error),
-      complete: () => console.log('Request a GET equipos completado'),
+      complete: () => console.log('Request a GET torneos completado'),
     })
   }
 

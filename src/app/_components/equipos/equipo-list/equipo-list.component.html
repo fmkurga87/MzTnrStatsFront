@@ -1,1 +1,26 @@
-<p>equipo-list works!</p>
+<h1 style = "text-align:center">EQUIPOS PARTICIPANTES</h1>
+<h5 style = "text-align:center">(agregar filtros, paginado, etc)</h5>
+
+<div class="row mt-5">
+    <div *ngIf="equipos.length"> 
+        <div *ngFor="let equipo of equipos">
+            <div class="card text-bg-primary">
+                <div class="row align-items-center">
+                    <div class="col-md-2 text-center">
+                        {{equipo.idMz}}
+                    </div>
+                    <div class="col-md-5 text-center">
+                        {{equipo.nombreEquipo}}
+                    </div>
+                    <div class="col-md-5 text-center">
+                        {{equipo.usuarioMZ || "Usuario desconocido"}}
+                    </div>
+                </div>
+            </div>
+            <!-- <div style="text-align:center">
+                {{equipo.NombreEquipo}}
+                {{equipo.IdMz}} - {{equipo.NombreEquipo}} ({{equipo.UsuarioMZ}})
+            </div> -->
+        </div>
+    </div>
+</div>
