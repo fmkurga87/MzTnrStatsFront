@@ -25,4 +25,8 @@ export class EquiposService {
     
     return this.http.get<BuscarEquiposResponse>(this.baseUrl + 'Equipos', httpOptions);
   }
+
+  getEquipo(){
+    
+  }
 }

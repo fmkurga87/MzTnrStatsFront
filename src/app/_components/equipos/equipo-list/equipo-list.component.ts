@@ -3,6 +3,7 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { EquiposService } from '../../../_services/equipos.service';
 import { BuscarEquiposResponse } from '../../../_models/equipos/buscar-equipos-response';
 import { Equipos } from '../../../_models/equipos/equipos';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-equipo-list',
@@ -13,7 +14,7 @@ export class EquipoListComponent implements OnInit{
    equipos : Equipos[] = [];
  
   //constructor(private http: HttpClient, private equiposService: EquiposService) {}
-  constructor(private equiposService: EquiposService) {}
+  constructor(private equiposService: EquiposService, private router: Router) {}
   
   ngOnInit(): void {
     this.getEquipos();
