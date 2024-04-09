@@ -13,7 +13,6 @@ import { Router } from '@angular/router';
 export class EquipoListComponent implements OnInit{
    equipos : Equipos[] = [];
  
-  //constructor(private http: HttpClient, private equiposService: EquiposService) {}
   constructor(private equiposService: EquiposService, private router: Router) {}
   
   ngOnInit(): void {

@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { BuscarEquiposResponse } from '../_models/equipos/buscar-equipos-response';
+import { EquipoCompleto } from '../_models/equipos/equipoCompleto';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +28,7 @@ export class EquiposService {
     return this.http.get<BuscarEquiposResponse>(this.baseUrl + 'Equipos', httpOptions);
   }
 
-  getEquipo(){
-    
+  getEquipo(id: number): Observable<EquipoCompleto> {
+    return this.http.get<EquipoCompleto>(this.baseUrl + 'Equipos/' + id);
   }
 }
