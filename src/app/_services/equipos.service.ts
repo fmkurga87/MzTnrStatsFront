@@ -4,6 +4,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { BuscarEquiposResponse } from '../_models/equipos/buscar-equipos-response';
 import { EquipoCompleto } from '../_models/equipos/equipoCompleto';
 import { Observable } from 'rxjs';
+import { ObtenerEquipoResponse } from '../_models/equipos/obtener-equipo-response';
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +29,7 @@ export class EquiposService {
     return this.http.get<BuscarEquiposResponse>(this.baseUrl + 'Equipos', httpOptions);
   }
 
-  getEquipo(id: number): Observable<EquipoCompleto> {
-    return this.http.get<EquipoCompleto>(this.baseUrl + 'Equipos/' + id);
+  getEquipo(id: number): Observable<ObtenerEquipoResponse> {
+    return this.http.get<ObtenerEquipoResponse>(this.baseUrl + 'Equipos/' + id);
   }
 }

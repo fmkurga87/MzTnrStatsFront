@@ -10,5 +10,5 @@ export interface EquipoCompleto {
     partidosProximos: ResumenPartido[];
     idMz: number;
     nombreEquipo: string;
-    usuarioMz: string;
+    usuarioMZ: string;
 }

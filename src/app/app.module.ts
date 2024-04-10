@@ -15,6 +15,7 @@ import { EquipoCardComponent } from './_components/equipos/equipo-card/equipo-ca
 import { TorneoDetailComponent } from './_components/torneos/torneo-detail/torneo-detail.component';
 import { HomeComponent } from './_components/home/home/home.component';
 import { ToastrModule } from 'ngx-toastr';
+import { TabsModule } from 'ngx-bootstrap/tabs';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ToastrModule } from 'ngx-toastr';
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right'
     }),
-    FormsModule
+    FormsModule,
+    TabsModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

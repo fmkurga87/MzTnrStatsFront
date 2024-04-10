@@ -1,4 +1,52 @@
-<p>equipo-detail works!</p>
-<div class="col-md-2 text-center">
-    <img src="{{equipo.urlEscudo}}">
-</div>
+<div class="container mt-4">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="card">
+          <img class="card-img-top img-thumbnail" src="{{equipo.urlEscudo}}" alt="{{equipo.nombreEquipo}}">
+          <div class="text-center">
+            <h3>{{equipo.nombreEquipo}}</h3>
+            </div>
+            <div class="text-center">
+                ({{equipo.usuarioMZ}})
+            </div>
+          <!-- Ver si agregamos alguna info mas -->
+        </div>
+        <div class="card-footer">
+          <div class="btn-group d-flex">
+            <!--<a class="btn btn-primary w-100" [routerLink]="['/equipo/edit/', equipo.idMz]" > Editar </a>-->
+            <!--<li class="list-inline-item"><button class="btn btn-primary" [routerLink]="['/players/', player.id]" ><i class="fa fa-user"></i></button></li>-->
+            <button class= "btn btn-primary w-100">Editar</button>
+            <!-- <button class= "btn btn-success w-100">Mensaje</button> -->
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-8">
+        <div class="tab-panel">
+          <tabset class="player-tabset">
+            <tab heading="Equipo">
+              <h4>Fecha de Nacimiento</h4>
+              <!-- <p>{{player.dateOfBirth}}</p> -->
+              <h4>Edad:</h4>
+              <!-- <p>{{player.age}}</p> -->
+              <h4>Ciudad:</h4>
+              <p><i>Atributo futuro.</i></p>
+            </tab>
+            <tab heading="Participaciones en TNR">
+              <h4>Fecha de ingreso</h4>
+              <!-- <p>{{player.dateOfJoin}}</p> -->
+              <h4>Posicion/es:</h4>
+              <p><i>Atributo futuro.</i></p>
+              <h4>Partidos/Estadisticas:</h4>
+              <p><i>Atributo futuro.</i></p>
+            </tab>
+            <tab heading="Partidos Jugados">
+              <!-- <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery> -->
+            </tab>
+            <tab heading="Próximos Partidos">
+              <p>Comentarios sobre el jugador no implementado.</p>
+            </tab>
+          </tabset> 
+        </div>
+      </div>
+    </div>
+  </div>

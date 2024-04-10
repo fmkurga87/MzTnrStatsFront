@@ -23,7 +23,7 @@ export class EquipoDetailComponent implements OnInit {
   {
     this.equiposService.getEquipo(156557).subscribe({
                                                   next: response =>{ 
-                                                                      this.equipo = response, 
+                                                                      this.equipo = response.equipo, 
                                                                       console.log(this.equipo)
                                                                     },
                                                   error: error => console.log(error)
