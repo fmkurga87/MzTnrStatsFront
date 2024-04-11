@@ -24,26 +24,22 @@
         <div class="tab-panel">
           <tabset class="player-tabset">
             <tab heading="Equipo">
-              <h4>Fecha de Nacimiento</h4>
-              <!-- <p>{{player.dateOfBirth}}</p> -->
-              <h4>Edad:</h4>
-              <!-- <p>{{player.age}}</p> -->
+              <h4>Usuario:</h4>
+              <p>{{equipo.usuarioMZ}}</p>
+              <h4>Nombre:</h4>
+              <p>{{equipo.apellido}} {{equipo.nombre}}</p>
               <h4>Ciudad:</h4>
-              <p><i>Atributo futuro.</i></p>
+              <p>{{equipo.ciudad}} - {{equipo.provincia}}</p>
             </tab>
             <tab heading="Participaciones en TNR">
-              <h4>Fecha de ingreso</h4>
-              <!-- <p>{{player.dateOfJoin}}</p> -->
-              <h4>Posicion/es:</h4>
-              <p><i>Atributo futuro.</i></p>
-              <h4>Partidos/Estadisticas:</h4>
-              <p><i>Atributo futuro.</i></p>
+              <h4>Lista de torneos en que participo</h4>
+              
             </tab>
             <tab heading="Partidos Jugados">
-              <!-- <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery> -->
+                <p>Lista de partidos jugados</p>
             </tab>
             <tab heading="Próximos Partidos">
-              <p>Comentarios sobre el jugador no implementado.</p>
+              <p>Lista de futuros partidos</p>
             </tab>
           </tabset> 
         </div>
