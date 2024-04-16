@@ -37,9 +37,49 @@
             </tab>
             <tab heading="Partidos Jugados">
                 <p>Lista de partidos jugados</p>
+                <div *ngFor="let partido of equipo.partidosJugados">
+                  <div *ngIf="partido.esTNR">
+                    <div class="card text-bg-success">
+                      <div class="card-body mt-0 mb-0">
+                        <div class="row align-items-center">
+                          {{partido.equipoLocal}} {{partido.golesLocal}} - {{partido.golesVisitante}} {{partido.equipoVisitante}} ({{partido.nombreTorneo}})
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div *ngIf="!partido.esTNR">
+                    <div class="card text-bg-info">
+                      <div class="card-body mt-0 mb-0">
+                        <div class="row align-items-center">
+                          {{partido.equipoLocal}} {{partido.golesLocal}} - {{partido.golesVisitante}} {{partido.equipoVisitante}} ({{partido.nombreTorneo}})
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             </tab>
             <tab heading="Próximos Partidos">
               <p>Lista de futuros partidos</p>
+              <div *ngFor="let partido of equipo.partidosProximos">
+                <div *ngIf="partido.esTNR">
+                  <div class="card text-bg-success">
+                    <div class="card-body mt-0 mb-0">
+                      <div class="row align-items-center">
+                        {{partido.equipoLocal}} {{partido.golesLocal}} - {{partido.golesVisitante}} {{partido.equipoVisitante}} ({{partido.nombreTorneo}})
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div *ngIf="!partido.esTNR">
+                  <div class="card text-bg-info">
+                    <div class="card-body mt-0 mb-0">
+                      <div class="row align-items-center">
+                        {{partido.equipoLocal}} - {{partido.equipoVisitante}} ({{partido.nombreTorneo}})
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </tab>
           </tabset> 
         </div>
