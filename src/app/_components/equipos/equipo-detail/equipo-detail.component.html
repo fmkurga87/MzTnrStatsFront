@@ -1,13 +1,13 @@
 <div class="container mt-4">
-    <div class="row">
+    <div class="row" *ngIf="equipo">
       <div class="col-sm-4">
         <div class="card">
-          <img class="card-img-top img-thumbnail" src="{{equipo.urlEscudo}}" alt="{{equipo.nombreEquipo}}">
+          <img class="card-img-top img-thumbnail" src="{{equipo?.urlEscudo}}" alt="{{equipo?.nombreEquipo}}">
           <div class="text-center">
-            <h3>{{equipo.nombreEquipo}}</h3>
+            <h3>{{equipo?.nombreEquipo}}</h3>
             </div>
             <div class="text-center">
-                ({{equipo.usuarioMZ}})
+                ({{equipo?.usuarioMZ}})
             </div>
           <!-- Ver si agregamos alguna info mas -->
         </div>
@@ -25,11 +25,11 @@
           <tabset class="player-tabset">
             <tab heading="Equipo">
               <h4>Usuario:</h4>
-              <p>{{equipo.usuarioMZ}}</p>
+              <p>{{equipo?.usuarioMZ}}</p>
               <h4>Nombre:</h4>
-              <p>{{equipo.apellido}} {{equipo.nombre}}</p>
+              <p>{{equipo?.apellido}} {{equipo?.nombre}}</p>
               <h4>Ciudad:</h4>
-              <p>{{equipo.ciudad}} - {{equipo.provincia}}</p>
+              <p>{{equipo?.ciudad}} - {{equipo?.provincia}}</p>
             </tab>
             <tab heading="Participaciones en TNR">
               <h4>Lista de torneos en que participo</h4>
@@ -37,11 +37,12 @@
             </tab>
             <tab heading="Partidos Jugados">
                 <p>Lista de partidos jugados</p>
-                <div *ngFor="let partido of equipo.partidosJugados">
+                <div *ngFor="let partido of equipo?.partidosJugados">
                   <div *ngIf="partido.esTNR">
                     <div class="card text-bg-success">
                       <div class="card-body mt-0 mb-0">
                         <div class="row align-items-center">
+                          <!-- Agregar link al torneo -->  
                           {{partido.equipoLocal}} {{partido.golesLocal}} - {{partido.golesVisitante}} {{partido.equipoVisitante}} ({{partido.nombreTorneo}})
                         </div>
                       </div>
@@ -60,11 +61,12 @@
             </tab>
             <tab heading="Próximos Partidos">
               <p>Lista de futuros partidos</p>
-              <div *ngFor="let partido of equipo.partidosProximos">
+              <div *ngFor="let partido of equipo?.partidosProximos">
                 <div *ngIf="partido.esTNR">
                   <div class="card text-bg-success">
                     <div class="card-body mt-0 mb-0">
                       <div class="row align-items-center">
+                        <!-- Agregar link al torneo -->
                         {{partido.equipoLocal}} {{partido.golesLocal}} - {{partido.golesVisitante}} {{partido.equipoVisitante}} ({{partido.nombreTorneo}})
                       </div>
                     </div>

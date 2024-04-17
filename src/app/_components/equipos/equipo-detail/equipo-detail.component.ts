@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EquiposService } from '../../../_services/equipos.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { EquipoCompleto } from '../../../_models/equipos/equipoCompleto';
 
 @Component({
@@ -9,19 +9,22 @@ import { EquipoCompleto } from '../../../_models/equipos/equipoCompleto';
   styleUrl: './equipo-detail.component.css'
 })
 export class EquipoDetailComponent implements OnInit {
-  equipo! : EquipoCompleto;
+  equipo : EquipoCompleto | undefined;
 
-  constructor(private equiposService: EquiposService, private router: Router) {
+  constructor(private equiposService: EquiposService, private route: ActivatedRoute) {
     
   }
   
   ngOnInit(): void {
-    this.getEquipo();
+    this.loadEquipo();
   }
 
-  getEquipo()
+  loadEquipo()
   {
-    this.equiposService.getEquipo(156557).subscribe({
+    const equipo =  this.route.snapshot.paramMap.get('idEquipo');
+    console.log(equipo);
+    if (!equipo) return;
+    this.equiposService.getEquipo(Number(equipo)).subscribe({
                                                   next: response =>{ 
                                                                       this.equipo = response.equipo, 
                                                                       console.log(this.equipo)

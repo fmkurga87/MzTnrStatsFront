@@ -12,7 +12,7 @@ const routes: Routes = [
   {path: 'Torneos', component: TorneoListComponent},
   {path: 'Torneos/:id', component: TorneoDetailComponent},
   {path: 'Equipos', component: EquipoListComponent},
-  {path: 'Equipos/:id', component: EquipoDetailComponent},
+  {path: 'Equipos/:idEquipo', component: EquipoDetailComponent},
   // {path: 'Admin', component: AppComponent},
   {path: '**', component: HomeComponent, pathMatch: 'full'},
 ];
