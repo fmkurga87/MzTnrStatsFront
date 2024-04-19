@@ -23,6 +23,7 @@ export class EquiposService {
       //.set('TemporadaMZ', buscarTorneosRequest.temporadaMZ)
       //.set('IdEquipo', buscarTorneosRequest.idEquipo)
       //.set('Fecha', buscarTorneosRequest.fecha)
+      .set('CantidadPagina', 50)
       .set('EntidadOrdenamiento', 1),
     }
     

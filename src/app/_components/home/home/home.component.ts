@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit{
     "fecha": "",
   };
 
-  constructor(private http: HttpClient, private torneosService: TorneosService) {}
+  constructor(private torneosService: TorneosService) {}
   
   ngOnInit(): void {
     this.torneosService.getTorneos(this.getTorneosParms).subscribe({
