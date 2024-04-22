@@ -1,6 +1,11 @@
-<p>torneo-list works!</p>
-
-
+<div *ngIf="torneos">
+    <div *ngFor="let temporada of torneos.torneosPorTemporada">
+        <h2> {{temporada.temporadaMZ}}</h2>
+        <div *ngFor="let torneo of temporada.torneos">
+            {{torneo.nombre}}
+        </div>
+    </div>
+</div>
     <!-- <div *ngFor="let temporada of Object.keys(torneosAgrupados)">
         <h2>{{ temporada }}</h2>
         <ul>

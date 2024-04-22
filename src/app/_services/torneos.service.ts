@@ -5,7 +5,7 @@ import { Torneos } from '../_models/torneos/torneos';
 import { Observable } from 'rxjs';
 import { ObtenerTorneoResponse } from '../_models/torneos/obtenerTorneoResponse';
 import { environment } from '../../environments/environment';
-import { TorneoLista } from '../_models/torneos/torneoLista';
+import { TorneosResponse } from '../_models/torneos/torneosResponse';
 
 @Injectable({
   providedIn: 'root'
@@ -42,7 +42,7 @@ export class TorneosService {
   }
 
   getListaTorneos(){
-    return this.http.get<TorneoLista[]>(this.baseUrl + 'Torneos/Lista');
+    return this.http.get<TorneosResponse>(this.baseUrl + 'Torneos/Lista');
   }
 
 }

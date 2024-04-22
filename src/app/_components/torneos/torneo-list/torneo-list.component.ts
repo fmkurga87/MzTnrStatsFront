@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { TorneoLista } from '../../../_models/torneos/torneoLista';
 import { TorneosService } from '../../../_services/torneos.service';
+import { TorneosResponse } from '../../../_models/torneos/torneosResponse';
 
 @Component({
   selector: 'app-torneo-list',
@@ -8,9 +8,8 @@ import { TorneosService } from '../../../_services/torneos.service';
   styleUrl: './torneo-list.component.css'
 })
 export class TorneoListComponent implements OnInit {
-  torneos : TorneoLista[] = [];
-  torneosAgrupados: { [temporadaMZ: number]: TorneoLista[] } = {};
-
+  torneos : TorneosResponse | undefined;
+  
   constructor(private torneosService: TorneosService) {
     
   }
@@ -24,20 +23,6 @@ export class TorneoListComponent implements OnInit {
       error: error => console.log(error),
     })
 
-    console.log("Voy a agrupar");
-    this.torneosAgrupados = this.agruparPorTemporadaMZ(this.torneos);
-
-    console.log(this.torneosAgrupados);
   }
 
-  // Función para agrupar torneos por temporadaMZ
-  agruparPorTemporadaMZ(torneos: TorneoLista[]): { [temporadaMZ: number]: TorneoLista[] } {
-    return torneos.reduce((acumulador: any = [], torneo) => {
-      if (!acumulador[torneo.temporadaMZ]) {
-        acumulador[torneo.temporadaMZ];
-      }
-      acumulador[torneo.temporadaMZ].push(torneo);
-      return acumulador;
-      }, {});
-  }
 }
