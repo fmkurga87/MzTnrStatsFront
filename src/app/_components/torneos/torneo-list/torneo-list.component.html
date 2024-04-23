@@ -1,18 +1,29 @@
-<div *ngIf="torneos">
+<!-- <div *ngIf="torneos">
     <div *ngFor="let temporada of torneos.torneosPorTemporada">
         <h2> {{temporada.temporadaMZ}}</h2>
         <div *ngFor="let torneo of temporada.torneos">
             {{torneo.nombre}}
         </div>
     </div>
-</div>
-    <!-- <div *ngFor="let temporada of Object.keys(torneosAgrupados)">
-        <h2>{{ temporada }}</h2>
-        <ul>
-        <li *ngFor="let torneo of torneosAgrupados[temporada]">
-            {{ torneo.nombre }}
-        </li>
-        </ul>
-    </div> -->
+</div> -->
 
-  
+<div *ngIf="torneos">
+    <div class="accordion" id="accordionTemporada">
+        <div *ngFor="let temporada of torneos.torneosPorTemporada; let i=index">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Temporada {{temporada.temporadaMZ}}
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse" data-bs-parent="#accordionTemporada">
+                    <div class="accordion-body">
+                        <div *ngFor="let torneo of temporada.torneos">
+                            {{torneo.nombre}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
