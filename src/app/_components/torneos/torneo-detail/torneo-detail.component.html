@@ -1,1 +1,41 @@
-<p>torneo-detail works!</p>
+<div *ngIf="torneo">
+    <div style="text-align:center">
+        <img class="card-img-top" src="{{torneo.torneo?.urlImagen}}">
+    </div>
+    <div *ngIf="torneo.torneo?.tipo == 1">
+        <!-- Es Liga Amistosa -->
+        <table class="table">
+            <thead>
+              <tr>
+                <th>Posición</th>
+                <th>Equipo</th>
+                <th>Partidos Jugados</th>
+                <th>Partidos Ganados</th>
+                <th>Partidos Empatados</th>
+                <th>Partidos Perdidos</th>
+                <th>Goles a Favor</th>
+                <th>Goles en Contra</th>
+                <th>Diferencia de Gol</th>
+                <th>Puntos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let equipo of torneo.torneo?.datosLA">
+                <td>{{ equipo.posicion }}</td>
+                <td>({{equipo.equipoId}}) {{ equipo.equipoNombre }}</td> <!-- Aquí deberías mostrar el nombre del equipo -->
+                <td>{{ equipo.partidosJugados }}</td>
+                <td>{{ equipo.partidosGanados }}</td>
+                <td>{{ equipo.partidosEmpatados }}</td>
+                <td>{{ equipo.partidosPerdidos }}</td>
+                <td>{{ equipo.golesAFavor }}</td>
+                <td>{{ equipo.golesEnContra }}</td>
+                <td>{{ equipo.diferenciaGol }}</td>
+                <td>{{ equipo.puntos }}</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    <div *ngIf="torneo.torneo?.tipo == 2">
+        <!-- Es Copa -->
+    </div>
+</div>

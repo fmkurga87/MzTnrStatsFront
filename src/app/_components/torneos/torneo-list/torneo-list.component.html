@@ -8,7 +8,27 @@
 </div> -->
 
 <div *ngIf="torneos">
-    <div class="accordion" id="accordionTemporada">
+    <div class="accordion" id="accordionTorneos">
+        <div *ngFor="let temporada of torneos.torneosPorTemporada; let i = index" class="accordion-item">
+            <h2 class="accordion-header" id="heading{{i}}">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse' + i" aria-expanded="true" [attr.aria-controls]="'collapse' + i">
+                Temporada {{ temporada.temporadaMZ }}
+            </button>
+            </h2>
+            <div [id]="'collapse' + i" class="accordion-collapse show"  data-bs-parent="#accordionTorneos">
+                <div class="accordion-body">
+                    <ul class="list-group">
+                    <li *ngFor="let torneo of temporada.torneos" class="list-group-item">
+                        <div routerLink="/Torneos/{{torneo.idMz}}"> {{ torneo.nombre }} </div>                        
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+      
+    <!-- <div class="accordion" id="accordionTemporada">
         <div *ngFor="let temporada of torneos.torneosPorTemporada; let i=index">
             <div class="accordion-item">
                 <h2 class="accordion-header">
@@ -25,5 +45,5 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>

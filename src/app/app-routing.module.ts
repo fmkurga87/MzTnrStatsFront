@@ -10,7 +10,7 @@ import { HomeComponent } from './_components/home/home/home.component';
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'Torneos', component: TorneoListComponent},
-  {path: 'Torneos/:id', component: TorneoDetailComponent},
+  {path: 'Torneos/:idTorneo', component: TorneoDetailComponent},
   {path: 'Equipos', component: EquipoListComponent},
   {path: 'Equipos/:idEquipo', component: EquipoDetailComponent},
   // {path: 'Admin', component: AppComponent},

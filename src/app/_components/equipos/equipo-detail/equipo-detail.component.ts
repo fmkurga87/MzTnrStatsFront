@@ -22,7 +22,6 @@ export class EquipoDetailComponent implements OnInit {
   loadEquipo()
   {
     const equipo =  this.route.snapshot.paramMap.get('idEquipo');
-    console.log(equipo);
     if (!equipo) return;
     this.equiposService.getEquipo(Number(equipo)).subscribe({
                                                   next: response =>{ 
