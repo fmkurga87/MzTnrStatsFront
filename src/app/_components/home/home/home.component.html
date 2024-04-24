@@ -7,7 +7,9 @@
     <!-- <app-player-card [player]="player"></app-player-card> -->
     <div *ngFor="let torneo of torneos.elementos">
         <div style="text-align:center">
-            <img class="card-img-top" src="{{torneo.urlImagen}}" alt="{{torneo.nombre}}">
+            <a routerLink="/Torneos/{{torneo.idMz}}">
+                <img class="card-img-top" src="{{torneo.urlImagen}}" alt="{{torneo.nombre}} ">
+            </a>
             {{torneo.idMz}} - {{torneo.nombre}}
         </div>
     </div>
