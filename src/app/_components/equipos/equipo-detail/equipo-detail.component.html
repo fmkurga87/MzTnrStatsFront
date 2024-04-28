@@ -38,26 +38,85 @@
             <tab heading="Partidos Jugados">
                 <p>Lista de partidos jugados</p>
                 <div *ngFor="let partido of equipo?.partidosJugados">
-                  <div *ngIf="partido.esTNR">
-                    <div class="card text-bg-success">
-                      <div class="card-body mt-0 mb-0">
-                        <div class="row align-items-center">
-                          <!-- Agregar link al torneo -->  
-                          {{partido.equipoLocal}} {{partido.golesLocal}} - {{partido.golesVisitante}} {{partido.equipoVisitante}} ({{partido.nombreTorneo}})
-                        </div>
+                  <div *ngIf="partido.esTNR" class="card text-bg-success ">
+                    <!-- Agregar link al torneo -->
+                    <div *ngIf="partido.tipoPartido == 0">
+                      <p class="m-0 mx-1 d-flex justify-content-start align-items-center fs-6">Otro</p>
+                    </div>
+                    <div *ngIf="partido.tipoPartido == 1">
+                      <p class="m-0 mx-1 d-flex justify-content-start align-items-center fs-6 ">Liga: {{partido.nombreTorneo}}</p>
+                    </div>
+                    <div *ngIf="partido.tipoPartido == 2">
+                      <p class="m-0 mx-1 d-flex justify-content-start align-items-center fs-6">Amistoso</p>
+                    </div>
+                    <div *ngIf="partido.tipoPartido == 3">
+                      <div routerLink="/Torneos/{{partido.idTorneo}}">
+                        <p class="m-0 mx-1 d-flex justify-content-start align-items-center fs-6">Liga Amistosa: {{partido.nombreTorneo}}</p>
                       </div>
                     </div>
-                  </div>
-                  <div *ngIf="!partido.esTNR">
-                    <div class="card text-bg-info">
-                      <div class="card-body mt-0 mb-0">
-                        <div class="row align-items-center">
-                          {{partido.equipoLocal}} {{partido.golesLocal}} - {{partido.golesVisitante}} {{partido.equipoVisitante}} ({{partido.nombreTorneo}})
+                    <div *ngIf="partido.tipoPartido == 4">
+                      <p class="m-0 mx-1 d-flex justify-content-start align-items-center fs-6">Grupo de Copa: {{partido.nombreTorneo}}</p>
+                    </div>
+                    <div *ngIf="partido.tipoPartido == 5">
+                      <p class="m-0 mx-1 d-flex justify-content-start align-items-center fs-6">Eliminatorias Copa: {{partido.nombreTorneo}}</p>
+                    </div>
+                    <div *ngIf="partido.tipoPartido == 6">
+                      <p class="m-0 mx-1 d-flex justify-content-start align-items-center fs-6">Grupo de Copa Privada: {{partido.nombreTorneo}}</p>
+                    </div>
+                    <div *ngIf="partido.tipoPartido == 7">
+                      <p class="m-0 mx-1 d-flex justify-content-start align-items-center fs-6">Eliminatorias de Copa Privada: {{partido.nombreTorneo}}</p>
+                    </div>
+                    
+                    <div class="card-body d-flex justify-content-center align-items-center"> 
+                        <div class="col-5">
+                          <p class="m-0 text-end fs-5">{{partido.equipoLocal}}</p>
                         </div>
-                      </div>
+                          <div class="col-2"> <!-- bg-warning-subtle -->
+                          <p class="m-0 text-center fw-bold fs-5">{{partido.golesLocal}} - {{partido.golesVisitante}}</p>
+                        </div>
+                        <div class="col-5">
+                          <p class="m-0 text-start fs-5">{{partido.equipoVisitante}}</p>
+                        </div>
                     </div>
                   </div>
-                </div>
+                  <div *ngIf="!partido.esTNR" class="card text-bg-info">
+                    <div *ngIf="partido.tipoPartido == 0">
+                      <p class="m-0 mx-1 d-flex justify-content-start align-items-center fs-6">Otro</p>
+                    </div>
+                    <div *ngIf="partido.tipoPartido == 1">
+                      <p class="m-0 mx-1 d-flex justify-content-start align-items-center fs-6">Liga: {{partido.nombreTorneo}}</p>
+                    </div>
+                    <div *ngIf="partido.tipoPartido == 2">
+                      <p class="m-0 mx-1 d-flex justify-content-start align-items-center fs-6">Amistoso</p>
+                    </div>
+                    <div *ngIf="partido.tipoPartido == 3">
+                      <p class="m-0 mx-1 d-flex justify-content-start align-items-center fs-6">Liga Amistosa: {{partido.nombreTorneo}}</p>
+                    </div>
+                    <div *ngIf="partido.tipoPartido == 4">
+                      <p class="m-0 mx-1 d-flex justify-content-start align-items-center fs-6">Grupo de Copa: {{partido.nombreTorneo}}</p>
+                    </div>
+                    <div *ngIf="partido.tipoPartido == 5">
+                      <p class="m-0 mx-1 d-flex justify-content-start align-items-center fs-6">Eliminatorias Copa: {{partido.nombreTorneo}}</p>
+                    </div>
+                    <div *ngIf="partido.tipoPartido == 6">
+                      <p class="m-0 mx-1 d-flex justify-content-start align-items-center fs-6">Grupo de Copa Privada: {{partido.nombreTorneo}}</p>
+                    </div>
+                    <div *ngIf="partido.tipoPartido == 7">
+                      <p class="m-0 mx-1 d-flex justify-content-start align-items-center fs-6">Eliminatorias de Copa Privada: {{partido.nombreTorneo}}</p>
+                    </div>
+                    <div class="card-body d-flex justify-content-center align-items-center"> 
+                        <div class="col-5">
+                          <p class="m-0 text-end fs-5">{{partido.equipoLocal}}</p>
+                        </div>
+                         <div class="col-2"> <!-- bg-warning-subtle -->
+                          <p class="m-0 text-center fw-bold fs-5">{{partido.golesLocal}} - {{partido.golesVisitante}}</p>
+                        </div>
+                        <div class="col-5">
+                          <p class="m-0 text-start fs-5">{{partido.equipoVisitante}}</p>
+                        </div>
+                    </div>
+                  </div>
+              </div>
             </tab>
             <tab heading="Próximos Partidos">
               <p>Lista de futuros partidos</p>
