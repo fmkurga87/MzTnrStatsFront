@@ -45,4 +45,8 @@ export class TorneosService {
     return this.http.get<TorneosResponse>(this.baseUrl + 'Torneos/Lista');
   }
 
+  getTorneosEquipo(idEquipo : number): Observable<TorneosResponse>{
+    return this.http.get<TorneosResponse>(this.baseUrl + 'Torneos/Lista/'+idEquipo);
+  }
+
 }

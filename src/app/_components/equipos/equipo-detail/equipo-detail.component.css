@@ -13,3 +13,9 @@
     background-color: #ffffff;
     border-top: none;
 }
+
+.en-curso {
+    font-weight: bold;
+    color: green;
+    margin-left: 5px;
+  }
