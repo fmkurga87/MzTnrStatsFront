@@ -6,6 +6,7 @@ import { EquipoListComponent } from './_components/equipos/equipo-list/equipo-li
 import { TorneoDetailComponent } from './_components/torneos/torneo-detail/torneo-detail.component';
 import { EquipoDetailComponent } from './_components/equipos/equipo-detail/equipo-detail.component';
 import { HomeComponent } from './_components/home/home/home.component';
+import { HistoricoCardComponent } from './_components/partidos/historico/historico-card/historico-card.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: 'Torneos/:idTorneo', component: TorneoDetailComponent},
   {path: 'Equipos', component: EquipoListComponent},
   {path: 'Equipos/:idEquipo', component: EquipoDetailComponent},
+  {path: 'Historial', component: HistoricoCardComponent},
   // {path: 'Admin', component: AppComponent},
   {path: '**', component: HomeComponent, pathMatch: 'full'},
 ];

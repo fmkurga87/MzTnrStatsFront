@@ -16,6 +16,7 @@ import { TorneoDetailComponent } from './_components/torneos/torneo-detail/torne
 import { HomeComponent } from './_components/home/home/home.component';
 import { ToastrModule } from 'ngx-toastr';
 import { TabsModule } from 'ngx-bootstrap/tabs';
+import { HistoricoCardComponent } from './_components/partidos/historico/historico-card/historico-card.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
     EquipoDetailComponent,
     EquipoCardComponent,
     TorneoDetailComponent,
-    HomeComponent
+    HomeComponent,
+    HistoricoCardComponent
   ],
   imports: [
     BrowserModule,
