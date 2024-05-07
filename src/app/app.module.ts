@@ -17,6 +17,7 @@ import { HomeComponent } from './_components/home/home/home.component';
 import { ToastrModule } from 'ngx-toastr';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { HistoricoCardComponent } from './_components/partidos/historico/historico-card/historico-card.component';
+import { HistoricoFilterComponent } from './_components/partidos/historico/historico-filter/historico-filter.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { HistoricoCardComponent } from './_components/partidos/historico/histori
     EquipoCardComponent,
     TorneoDetailComponent,
     HomeComponent,
-    HistoricoCardComponent
+    HistoricoCardComponent,
+    HistoricoFilterComponent
   ],
   imports: [
     BrowserModule,

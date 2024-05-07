@@ -16,34 +16,10 @@
           </div>    
     </div>
     <div *ngFor="let partido of historico?.partidos">
-        <div *ngIf="partido.esTNR" class="card text-bg-success ">
-          <div *ngIf="partido.tipoPartido == 0">
-            <p class="m-0 mx-1 d-flex justify-content-start align-items-center fs-6">Otro</p>
+        <div *ngIf="partido.esTNR" class="card text-bg-info ">
+          <div routerLink="/Torneos/{{partido.idTorneo}}">
+            <p class="m-0 mx-1 d-flex justify-content-start align-items-center fs-6">Torneo: <u>{{partido.nombreTorneo}}</u></p>
           </div>
-          <div *ngIf="partido.tipoPartido == 1">
-            <p class="m-0 mx-1 d-flex justify-content-start align-items-center fs-6 ">Liga: {{partido.nombreTorneo}}</p>
-          </div>
-          <div *ngIf="partido.tipoPartido == 2">
-            <p class="m-0 mx-1 d-flex justify-content-start align-items-center fs-6">Amistoso</p>
-          </div>
-          <div *ngIf="partido.tipoPartido == 3">
-            <div routerLink="/Torneos/{{partido.idTorneo}}">
-              <p class="m-0 mx-1 d-flex justify-content-start align-items-center fs-6">Liga Amistosa: {{partido.nombreTorneo}}</p>
-            </div>
-          </div>
-          <div *ngIf="partido.tipoPartido == 4">
-            <p class="m-0 mx-1 d-flex justify-content-start align-items-center fs-6">Grupo de Copa: {{partido.nombreTorneo}}</p>
-          </div>
-          <div *ngIf="partido.tipoPartido == 5">
-            <p class="m-0 mx-1 d-flex justify-content-start align-items-center fs-6">Eliminatorias Copa: {{partido.nombreTorneo}}</p>
-          </div>
-          <div *ngIf="partido.tipoPartido == 6">
-            <p class="m-0 mx-1 d-flex justify-content-start align-items-center fs-6">Grupo de Copa Privada: {{partido.nombreTorneo}}</p>
-          </div>
-          <div *ngIf="partido.tipoPartido == 7">
-            <p class="m-0 mx-1 d-flex justify-content-start align-items-center fs-6">Eliminatorias de Copa Privada: {{partido.nombreTorneo}}</p>
-          </div>
-          
           <div class="card-body d-flex justify-content-center align-items-center"> 
               <div class="col-5">
                 <p class="m-0 text-end fs-5">{{partido.equipoLocal}}</p>
@@ -56,7 +32,7 @@
               </div>
           </div>
         </div>
-        <div *ngIf="!partido.esTNR" class="card text-bg-primary">
+        <!-- <div *ngIf="!partido.esTNR" class="card text-bg-primary">
           <div *ngIf="partido.tipoPartido == 0">
             <p class="m-0 mx-1 d-flex justify-content-start align-items-center fs-6">Otro</p>
           </div>
@@ -85,14 +61,14 @@
               <div class="col-5">
                 <p class="m-0 text-end fs-5">{{partido.equipoLocal}}</p>
               </div>
-               <div class="col-2"> <!-- bg-warning-subtle -->
+               <div class="col-2"> 
                 <p class="m-0 text-center fw-bold fs-5">{{partido.golesLocal}} - {{partido.golesVisitante}}</p>
               </div>
               <div class="col-5">
                 <p class="m-0 text-start fs-5">{{partido.equipoVisitante}}</p>
               </div>
           </div>
-        </div>
+        </div> -->
     </div>
 </div>
 

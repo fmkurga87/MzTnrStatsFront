@@ -22,7 +22,7 @@ export class PartidosService {
       //.set('IdEquipo', buscarTorneosRequest.idEquipo)
       //.set('Fecha', buscarTorneosRequest.fecha)
       .set('idEquipo1', 156557)
-      .set('idEquipo2', 313684),
+      .set('idEquipo2', 993062),
     }
     
     return this.http.get<BuscarHistorialResponse>(this.baseUrl + 'Partidos/Historico', httpOptions);
