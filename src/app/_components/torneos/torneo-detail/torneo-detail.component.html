@@ -22,7 +22,7 @@
             <tbody>
               <tr *ngFor="let equipo of torneo.torneo?.datosLA">
                 <td>{{ equipo.posicion }}</td>
-                <td>({{equipo.equipoId}}) {{ equipo.equipoNombre }}</td> <!-- Aquí deberías mostrar el nombre del equipo -->
+                <td routerLink="/Equipos/{{equipo.equipoId}}"><u>({{equipo.equipoId}}) {{ equipo.equipoNombre }}</u></td> <!-- Aquí deberías mostrar el nombre del equipo -->
                 <td>{{ equipo.partidosJugados }}</td>
                 <td>{{ equipo.partidosGanados }}</td>
                 <td>{{ equipo.partidosEmpatados }}</td>
