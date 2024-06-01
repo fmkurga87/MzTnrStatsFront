@@ -39,7 +39,17 @@
         <!-- Es Copa -->
         <p></p>
         <div style="text-align:center"> 
-            <h3>Detalle de COPA aun no generado</h3>
+            <h3>Detalle de COPA en desarrollo</h3>
         </div>
+        <div *ngFor="let grupo of torneo.torneo.datosCopa.grupos">
+          <h1>Grupo: "{{ grupo.grupo }}"</h1>
+          <div *ngFor="let equipo of grupo.equiposGrupo">
+            <h2>{{ equipo.nombreEquipo }}</h2>
+          </div>
+          <div *ngFor="let partido of grupo.partidosDelGrupo">
+            <h3>{{partido.equipoLocal}} {{partido.golesLocal}} - {{partido.golesVisitante}} {{partido.equipoVisitante}}</h3>
+          </div>  
+        </div>
+        {{ torneo.torneo.datosCopa.playoff }}
     </div>
 </div>
