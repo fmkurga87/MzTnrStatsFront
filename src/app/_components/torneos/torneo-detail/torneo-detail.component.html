@@ -43,9 +43,36 @@
         </div>
         <div *ngFor="let grupo of torneo.torneo.datosCopa.grupos">
           <h1>Grupo: "{{ grupo.grupo }}"</h1>
-          <div *ngFor="let equipo of grupo.equiposGrupo">
-            <h2>{{ equipo.nombreEquipo }}</h2>
-          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Posición</th>
+                <th>Equipo</th>
+                <th>Partidos Jugados</th>
+                <th>Partidos Ganados</th>
+                <th>Partidos Empatados</th>
+                <th>Partidos Perdidos</th>
+                <th>Goles a Favor</th>
+                <th>Goles en Contra</th>
+                <th>Diferencia de Gol</th>
+                <th>Puntos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let equipo of grupo.equiposGrupo">
+                <td>{{ equipo.posicion }}</td>
+                <td routerLink="/Equipos/{{equipo.equipoId}}"><u>({{equipo.equipoId}}) {{ equipo.nombreEquipo }}</u></td> <!-- Aquí deberías mostrar el nombre del equipo -->
+                <td>{{ equipo.partidosJugados }}</td>
+                <td>{{ equipo.partidosGanados }}</td>
+                <td>{{ equipo.partidosEmpatados }}</td>
+                <td>{{ equipo.partidosPerdidos }}</td>
+                <td>{{ equipo.golesAFavor }}</td>
+                <td>{{ equipo.golesEnContra }}</td>
+                <td>{{ equipo.diferenciaGol }}</td>
+                <td>{{ equipo.puntos }}</td>
+              </tr>
+            </tbody>
+          </table>
           <div *ngFor="let partido of grupo.partidosDelGrupo">
             <h3>{{partido.equipoLocal}} {{partido.golesLocal}} - {{partido.golesVisitante}} {{partido.equipoVisitante}}</h3>
           </div>  
