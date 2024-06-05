@@ -4,8 +4,8 @@
     </div>
     <div *ngIf="torneo.torneo?.tipo == 1">
         <!-- Es Liga Amistosa -->
-        <div class="container mt-3 border border-primary">
-          <table class="table">
+        <div class="container mt-3 "> <!--border border-primary-->
+          <table class="table table-bordered table-striped table-hover">
             <thead>
               <tr>
                 <th>Posición</th>
@@ -46,8 +46,8 @@
         </div>
         <div *ngFor="let grupo of torneo.torneo.datosCopa.grupos">
           <h1>Grupo: "{{ grupo.grupo }}"</h1>
-          <div class="container mt-3 border border-primary">
-            <table class="table">
+          <div class="container mt-3">
+            <table class="table table-bordered table-striped table-hover">
               <thead>
                 <tr>
                   <th>Posición</th>
