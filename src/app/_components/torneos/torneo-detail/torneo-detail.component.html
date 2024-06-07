@@ -45,20 +45,20 @@
             <h3>Detalle de COPA en desarrollo</h3>
         </div>
         <div *ngFor="let grupo of torneo.torneo.datosCopa.grupos">
-          <h1>Grupo: "{{ grupo.grupo }}"</h1>
+          <h1 class="text-center">Grupo: {{ grupo.grupo }}</h1>
           <div class="container mt-3">
-            <table class="table table-bordered table-striped table-hover">
+            <table class="table table-bordered table-striped table-hover text-center">
               <thead>
                 <tr>
-                  <th>Posición</th>
+                  <th>Pos.</th>
                   <th>Equipo</th>
-                  <th>Partidos Jugados</th>
-                  <th>Partidos Ganados</th>
-                  <th>Partidos Empatados</th>
-                  <th>Partidos Perdidos</th>
-                  <th>Goles a Favor</th>
-                  <th>Goles en Contra</th>
-                  <th>Diferencia de Gol</th>
+                  <th>PJ</th>
+                  <th>PG</th>
+                  <th>PE</th>
+                  <th>PP</th>
+                  <th>GF</th>
+                  <th>GC</th>
+                  <th>DG</th>
                   <th>Puntos</th>
                 </tr>
               </thead>
@@ -78,10 +78,14 @@
               </tbody>
             </table>
           </div>
-          <div *ngFor="let partido of grupo.partidosDelGrupo">
-            <h3>{{partido.equipoLocal}} {{partido.golesLocal}} - {{partido.golesVisitante}} {{partido.equipoVisitante}}</h3>
-          </div>  
+          <div class="container border mt-4 mb-4 text-center">
+            <h1 class="text-center">Partidos registrados: </h1>
+            <div *ngFor="let partido of grupo.partidosDelGrupo">
+              <h3>{{partido.equipoLocal}} {{partido.golesLocal}} - {{partido.golesVisitante}} {{partido.equipoVisitante}}</h3>
+            </div>
+          </div>
         </div>
+
         {{ torneo.torneo.datosCopa.playoff }}
     </div>
 </div>
