@@ -23,7 +23,7 @@
             <tbody>
               <tr *ngFor="let equipo of torneo.torneo?.datosLA">
                 <td>{{ equipo.posicion }}</td>
-                <td routerLink="/Equipos/{{equipo.equipoId}}"><u>({{equipo.equipoId}}) {{ equipo.equipoNombre }}</u></td> <!-- Aquí deberías mostrar el nombre del equipo -->
+                <td routerLink="/Equipos/{{equipo.equipoId}}"><u>({{equipo.equipoId}}) {{ equipo.equipoNombre }}</u></td>
                 <td>{{ equipo.partidosJugados }}</td>
                 <td>{{ equipo.partidosGanados }}</td>
                 <td>{{ equipo.partidosEmpatados }}</td>
@@ -65,7 +65,7 @@
               <tbody>
                 <tr *ngFor="let equipo of grupo.equiposGrupo">
                   <td>{{ equipo.posicion }}</td>
-                  <td routerLink="/Equipos/{{equipo.equipoId}}"><u>({{equipo.equipoId}}) {{ equipo.nombreEquipo }}</u></td> <!-- Aquí deberías mostrar el nombre del equipo -->
+                  <td routerLink="/Equipos/{{equipo.equipoId}}"><u>({{equipo.equipoId}}) {{ equipo.nombreEquipo }}</u></td>
                   <td>{{ equipo.partidosJugados }}</td>
                   <td>{{ equipo.partidosGanados }}</td>
                   <td>{{ equipo.partidosEmpatados }}</td>
@@ -79,7 +79,7 @@
             </table>
           </div>
           <div class="container border mt-4 mb-4 text-center">
-            <h2 class="text-center">Partidos del grupo: </h2>
+            <h2 class="text-center">Partidos registrados en MzTNR: </h2>
             <div *ngFor="let partido of grupo.partidosDelGrupo">
               <div class="card-body d-flex justify-content-center align-items-center border-top"> 
                 <div class="col-5">
