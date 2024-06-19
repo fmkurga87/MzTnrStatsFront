@@ -43,14 +43,23 @@
         <!-- Es Copa -->
         <p></p>
         <!-- TODO: Ver como manejar esto de las pestañas -->
-        <!-- <ul class="nav nav-tabs nav-fill">
+        <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Grupos</a>
+            <a class="nav-link active" id="grupos-tab" routerLinkActive="active" routerLink="/grupos"  role="tab" aria-controls="home" aria-selected="true">Grupos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Playoffs</a>
+            <a class="nav-link" id="playoffs-tab" routerLinkActive="active" routerLink="/playoffs"  role="tab" aria-controls="profile" aria-selected="false">Playoffs</a>
           </li>
-        </ul> -->
+        </ul>
+
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="grupos" role="tabpanel"  aria-labelledby="grupos-tab">
+          
+          </div>
+          <div class="tab-pane fade" id="playoffs" role="tabpanel" aria-labelledby="playoffs-tab">
+             
+          </div>
+        </div>
 
         <div *ngFor="let grupo of torneo.torneo.datosCopa.grupos">
           
