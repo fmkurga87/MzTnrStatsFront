@@ -17,15 +17,12 @@
                 <li class="nav-item">
                     <a class="nav-link" routerLink="/Historial">Historiales</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link disabled" routerLink="/Admin" aria-disabled="true">Admin</a>
-                </li>
+                </li> -->
             </ul>
-            <form #loginForm="ngForm" class="d-flex" (ngSubmit)="login()" autocomplete="off">
-                <!-- 
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-                -->
+            <button class="btn btn-outline-success" type="submit">Ingreso Admin</button>
+            <!-- <form #loginForm="ngForm" class="d-flex" (ngSubmit)="login()" autocomplete="off">
                 <input 
                     name="username" 
                     [(ngModel)]="model.username" 
@@ -39,7 +36,7 @@
                     type="password" 
                     placeholder="Pass">
                 <button class="btn btn-outline-success" type="submit">Ingresar</button>
-            </form>
+            </form> -->
         </div> <!-- div del responsive (quitar si se quita lo de mas arriba) -->
     </div>
 </nav>
