@@ -7,6 +7,7 @@ import { TorneoDetailComponent } from './_components/torneos/torneo-detail/torne
 import { EquipoDetailComponent } from './_components/equipos/equipo-detail/equipo-detail.component';
 import { HomeComponent } from './_components/home/home/home.component';
 import { HistoricoFilterComponent } from './_components/partidos/historico/historico-filter/historico-filter.component';
+import { FormulariosComponent } from './_components/home/formularios/formularios.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'Equipos', component: EquipoListComponent},
   {path: 'Equipos/:idEquipo', component: EquipoDetailComponent},
   {path: 'Historial', component: HistoricoFilterComponent},
+  {path: 'Admin', component: FormulariosComponent},
   // {path: 'Admin', component: AppComponent},
   {path: '**', component: HomeComponent, pathMatch: 'full'},
 ];
