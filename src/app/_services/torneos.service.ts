@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { ObtenerTorneoResponse } from '../_models/torneos/obtenerTorneoResponse';
 import { environment } from '../../environments/environment';
 import { TorneosResponse } from '../_models/torneos/torneosResponse';
+import { CrearTorneoRequest } from '../_models/torneos/crearTorneoRequest';
 
 @Injectable({
   providedIn: 'root'
@@ -47,6 +48,10 @@ export class TorneosService {
 
   getTorneosEquipo(idEquipo : number): Observable<TorneosResponse>{
     return this.http.get<TorneosResponse>(this.baseUrl + 'Torneos/Lista/'+idEquipo);
+  }
+
+  postTorneo(nuevoTorneo: CrearTorneoRequest) {
+    return this.http.post<number>(this.baseUrl + 'Torneos', nuevoTorneo);
   }
 
 }

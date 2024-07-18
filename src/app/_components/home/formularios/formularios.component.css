@@ -2,6 +2,10 @@
     width: 300px;
 }
 
+.form-select {
+    width: 300px;
+}
+
 .contenedor-campo {
     display: flex;
     justify-content: space-between;

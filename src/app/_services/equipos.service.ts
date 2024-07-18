@@ -5,6 +5,7 @@ import { BuscarEquiposResponse } from '../_models/equipos/buscar-equipos-respons
 import { EquipoCompleto } from '../_models/equipos/equipoCompleto';
 import { Observable } from 'rxjs';
 import { ObtenerEquipoResponse } from '../_models/equipos/obtener-equipo-response';
+import { CrearEquipoRequest } from '../_models/equipos/crear-equipo-request';
 
 @Injectable({
   providedIn: 'root'
@@ -32,5 +33,9 @@ export class EquiposService {
 
   getEquipo(id: number): Observable<ObtenerEquipoResponse> {
     return this.http.get<ObtenerEquipoResponse>(this.baseUrl + 'Equipos/' + id);
+  }
+
+  postEquipo(nuevoEquipo: CrearEquipoRequest) {
+    return this.http.post<number>(this.baseUrl + 'Equipos', nuevoEquipo);
   }
 }

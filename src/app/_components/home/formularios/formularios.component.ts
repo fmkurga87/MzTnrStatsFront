@@ -14,9 +14,8 @@ import { CrearEquipoRequest } from '../../../_models/equipos/crear-equipo-reques
 })
 export class FormulariosComponent implements OnInit{
 // TODO: Ver el tema del login
-// TODO: Ver si van estos modelos
-crearEquipoRequest! : FormGroup;
-torneos : TorneosResponse | undefined;
+crearEquipoRequest!: FormGroup;
+crearTorneosRequest!: FormGroup;
 
 constructor(private fb: FormBuilder, private equiposService: EquiposService, private torneosService: TorneosService, private route: ActivatedRoute) { }
   
@@ -27,20 +26,42 @@ ngOnInit(): void {
       usuarioMZ: ['', Validators.required],
       nombre: ['', Validators.required],
       apellido: ['', Validators.required],
-      ciudadId: [0, Validators.required]
+      ciudadId: [1, Validators.required]
     });
+
+    this.crearTorneosRequest = this.fb.group({
+      idMz: [0, Validators.required],
+      nombre: ['', Validators.required],
+      edicion: [0, Validators.required],
+      temporadaMZ: [0, Validators.required],
+      fechaInicio: [Date.now, Validators.required],
+      fechaFin: [Date.now, Validators.required],
+      link: ['', Validators.required],
+      idCampeon: [0, Validators.required],
+      urlImagen: ['', Validators.required],
+      tipo: [1, Validators.required] 
+     })
   }
 
-  onSubmit(): void {
+  onSubmitEquipo(): void {
     if (this.crearEquipoRequest.valid)
     {
       console.log(this.crearEquipoRequest);
+      const equipo: CrearEquipoRequest = this.crearEquipoRequest.value;
+      this.equiposService.postEquipo(equipo).subscribe(response => {
+        console.log('Equipo agregado', response);
+      })
     }
-    // if (this.crearEquipoRequest.valid) {
-    //   const equipo: Equipo = this.equipoForm.value;
-    //   this.equiposService.addEquipo(equipo).subscribe(response => {
-    //     console.log('Equipo agregado', response);
-    //   });
-    // }
+  }
+
+  onSubmitTorneo(): void {
+    if (this.crearTorneosRequest.valid)
+    {
+      console.log(this.crearTorneosRequest);
+      // const equipo: CrearEquipoRequest = this.crearEquipoRequest.value;
+      // this.equiposService.postEquipo(equipo).subscribe(response => {
+      //   console.log('Equipo agregado', response);
+      // })
+    }
   }
 }
