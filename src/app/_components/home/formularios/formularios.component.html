@@ -86,26 +86,30 @@
                     </div>
                     <div class="contenedor-campo">
                         <div>
-                            <label for="tempordaMZ">Temporada MZ</label>
+                            <label for="temporadaMZ">Temporada MZ</label>
                         </div>
                         <div>
-                            <input class="form-control" placeholder="Temporada MZ"  id="tempordaMZ" formControlName="tempordaMZ" />
+                            <input class="form-control" placeholder="Temporada MZ"  id="temporadaMZ" formControlName="temporadaMZ" />
                         </div>
                     </div>
                     <div class="contenedor-campo">
                         <div>
                             <label for="fechaInicio">Fecha Inicio</label>
                         </div>
-                        <div>
-                            <input class="form-control" placeholder="Fecha Inicio"  id="fechaInicio" formControlName="fechaInicio" />
+                        <div class="input-fecha">
+                            <input matImput [matDatepicker]="pickerInicio" class="form-control" placeholder="dd/mm/aaaa"  id="fechaInicio" formControlName="fechaInicio" />
+                            <mat-datepicker #pickerInicio></mat-datepicker>
+                            <button (click)="pickerInicio.open()" class="btn btn-primary"><fa-icon [icon]="faCalendar"></fa-icon></button>
                         </div>
                     </div>
                     <div class="contenedor-campo">
                         <div>
                             <label for="fechaFin">Fecha Fin</label>
                         </div>
-                        <div>
-                            <input class="form-control" placeholder="Fecha Fin"  id="fechaFin" formControlName="fechaFin" />
+                        <div class="input-fecha">
+                            <input matImput [matDatepicker]="pickerFin" class="form-control" placeholder="dd/mm/aaaa"  id="fechaFin" formControlName="fechaFin" />
+                            <mat-datepicker #pickerFin></mat-datepicker>
+                            <button (click)="pickerFin.open()" class="btn btn-primary"><fa-icon [icon]="faCalendar"></fa-icon></button>
                         </div>
                     </div>
                     <div class="contenedor-campo">

@@ -1,3 +1,7 @@
+.calendario {
+    height: max-content;
+}
+
 .form-control {
     width: 300px;
 }
@@ -16,12 +20,13 @@
     width: 500px;
 }
 
-.input-equipo {
-    
+.icono-calendario {
+    width: 40px;
 }
 
-.label-equipo {
-
+.input-fecha {
+    display: flex;
+    width: 300px;
 }
 
 .seleccion-formularios h1 {

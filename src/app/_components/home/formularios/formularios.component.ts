@@ -6,6 +6,9 @@ import { ActivatedRoute } from '@angular/router';
 import { EquipoCompleto } from '../../../_models/equipos/equipoCompleto';
 import { TorneosResponse } from '../../../_models/torneos/torneosResponse';
 import { CrearEquipoRequest } from '../../../_models/equipos/crear-equipo-request';
+import { DateAdapter } from '@angular/material/core';
+import { faCalendar } from '@fortawesome/free-regular-svg-icons';
+import { CrearTorneoRequest } from '../../../_models/torneos/crearTorneoRequest';
 
 @Component({
   selector: 'app-formularios',
@@ -16,10 +19,18 @@ export class FormulariosComponent implements OnInit{
 // TODO: Ver el tema del login
 crearEquipoRequest!: FormGroup;
 crearTorneosRequest!: FormGroup;
+faCalendar = faCalendar;
 
-constructor(private fb: FormBuilder, private equiposService: EquiposService, private torneosService: TorneosService, private route: ActivatedRoute) { }
+constructor(private fb: FormBuilder, private equiposService: EquiposService, private torneosService: TorneosService, private route: ActivatedRoute,
+            private dateAdapter: DateAdapter<Date>) 
+{ 
+  this.dateAdapter.setLocale('es-AR');
+}
   
 ngOnInit(): void {
+
+    // En https://www.youtube.com/watch?v=KSN9GqhFqPs explican validaciones 
+
     this.crearEquipoRequest = this.fb.group({
       nombreEquipo: ['', Validators.required],
       idMz: [0, Validators.required],
@@ -58,10 +69,10 @@ ngOnInit(): void {
     if (this.crearTorneosRequest.valid)
     {
       console.log(this.crearTorneosRequest);
-      // const equipo: CrearEquipoRequest = this.crearEquipoRequest.value;
-      // this.equiposService.postEquipo(equipo).subscribe(response => {
-      //   console.log('Equipo agregado', response);
-      // })
+      const torneo: CrearTorneoRequest = this.crearTorneosRequest.value;
+      this.torneosService.postTorneo(torneo).subscribe(response => {
+         console.log('Torneo agregado', response);
+       })
     }
   }
 }

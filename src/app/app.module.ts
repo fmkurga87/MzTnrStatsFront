@@ -19,6 +19,10 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { HistoricoCardComponent } from './_components/partidos/historico/historico-card/historico-card.component';
 import { HistoricoFilterComponent } from './_components/partidos/historico/historico-filter/historico-filter.component';
 import { FormulariosComponent } from './_components/home/formularios/formularios.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -45,9 +49,14 @@ import { FormulariosComponent } from './_components/home/formularios/formularios
     }),
     FormsModule,
     TabsModule.forRoot(),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    FontAwesomeModule
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
