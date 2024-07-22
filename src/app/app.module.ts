@@ -23,6 +23,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { EquiposNewComponent } from './_components/equipos/equipos-new/equipos-new.component';
+import { TorneosNewComponent } from './_components/torneos/torneos-new/torneos-new.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HomeComponent,
     HistoricoCardComponent,
     HistoricoFilterComponent,
-    FormulariosComponent
+    FormulariosComponent,
+    EquiposNewComponent,
+    TorneosNewComponent
   ],
   imports: [
     BrowserModule,

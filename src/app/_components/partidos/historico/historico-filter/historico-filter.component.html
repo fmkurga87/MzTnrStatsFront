@@ -1,24 +1,29 @@
-<form #filters="ngForm" (ngSubmit)="loadHistorico()" autocomplete="off">
-    <div class="text-center">
-        <div class="btn-group">
-        <div class="mb-3">
-            <input type="text"
-                class="form-control"
-                name="filtroEquipo1"
-                placeholder="Equipo 1" >
+<div class="contenedor-filtros">
+    <form [formGroup]="busquedaEquipos" (ngSubmit)="loadHistorico()" autocomplete="off">
+        <div class="filtros">
+            <div>
+                <input type="text"
+                    class="form-control"
+                    name="idEquipo1"
+                    formControlName="idEquipo1"
+                    placeholder="Equipo 1" >
+            </div>
+            <div>
+                <input type="text"
+                    class="form-control"
+                    name="idEquipo2"
+                    formControlName="idEquipo2"
+                    placeholder="Equipo 2" >
+            </div>
+            <div>
+                <button class="btn btn-success me-2" type="submit">Buscar</button>
+            </div>
         </div>
-        <div class="mb-3">
-            <input type="text"
-                class="form-control"
-                name="filtroEquipo2"
-                placeholder="Equipo 2" >
-        </div>
-        <div class="text-center">
-            <button class="btn btn-success me-2" type="submit">Buscar</button>
-        </div>
-        </div>
-    </div>
-</form>
+    </form>
+</div>
 
-<app-historico-card></app-historico-card>
+<div *ngIf="mostrarTarjeta && busquedaEquipos.valid">
+    <app-historico-card [partidosFromFiltro]="historico"></app-historico-card>
+</div>
+
 

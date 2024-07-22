@@ -1,0 +1,52 @@
+<h1>Carga manual de equipo</h1>
+<form [formGroup]="crearEquipoRequest" (ngSubmit)="onSubmitEquipo()">
+    <div class="formulario-equipo">
+        <div class="contenedor-campo">
+            <div>
+                <label for="nombreEquipo">Nombre del Equipo</label>
+            </div>
+            <div>
+                <input class="form-control" placeholder="Nombre del Equipo" id="nombreEquipo" formControlName="nombreEquipo" />
+            </div>
+        </div>
+        <div class="contenedor-campo">
+            <div>
+                <label for="idMz">Id MZ</label>
+            </div>
+            <div>
+                <input class="form-control" placeholder="Id MZ" id="idMz" formControlName="idMz" type="number" />
+            </div>
+        </div>
+        <div class="contenedor-campo">
+            <div>
+                <label for="usuarioMZ">Usuario</label>    
+            </div>
+            <div>
+                <input class="form-control" placeholder="Usuario"  id="usuarioMZ" formControlName="usuarioMZ" />
+            </div>
+        </div>
+        <div class="contenedor-campo">
+            <div>
+                <label for="nombre">Nombre</label>
+            </div>
+            <div>
+                <input class="form-control" placeholder="Nombre"  id="nombre" formControlName="nombre" />
+            </div>
+        </div>
+        <div class="contenedor-campo">
+            <div>
+                <label for="apellido">Apellido</label>
+            </div>
+            <div>
+                <input class="form-control" placeholder="Apellido"  id="apellido" formControlName="apellido" />
+            </div>
+        </div>
+        <!--
+        <div class="contenedor-campo">
+            <label for="ciudadId">ID de la Ciudad</label>
+            <input id="ciudadId" formControlName="ciudadId" type="number" />
+        </div>
+        -->
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>

@@ -1,0 +1,19 @@
+h1 {
+    text-align: center;
+    padding-top: 15px;
+    font-size: 25px;
+}
+
+.contenedor-campo {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+}
+
+.form-control {
+    width: 300px;
+}
+
+.formulario-equipo {
+    width: 500px;
+}
