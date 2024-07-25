@@ -14,19 +14,4 @@ export class HistoricoCardComponent{
   {  
     
   }
-  // ngOnInit(): void {
-  //   this.loadHistorico();
-  // }
-
-  // loadHistorico()
-  // {
-  //   //const equipo =  this.route.snapshot.paramMap.get('idEquipo');
-  //   //if (!equipo) return;
-  //   // this.partidosService.getHistorico().subscribe({
-  //   //                                               next: response =>{ 
-  //   //                                                                   this.historico = response
-  //   //                                                                 },
-  //   //                                               error: error => console.log(error)
-  //   //                                             })
-  // }
 }

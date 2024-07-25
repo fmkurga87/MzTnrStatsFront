@@ -39,8 +39,9 @@ export class TorneosNewComponent implements OnInit{
   onSubmitTorneo(): void {
     if (this.crearTorneosRequest.valid)
     {
-      console.log(this.crearTorneosRequest);
+      //console.log(this.crearTorneosRequest);
       const torneo: CrearTorneoRequest = this.crearTorneosRequest.value;
+      //console.log(torneo);
       this.torneosService.postTorneo(torneo).subscribe(response => {
          console.log('Torneo agregado', response);
        })

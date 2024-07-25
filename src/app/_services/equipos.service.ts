@@ -30,7 +30,7 @@ export class EquiposService {
     
     return this.http.get<BuscarEquiposResponse>(this.baseUrl + 'Equipos', httpOptions);
   }
-
+  
   getEquipo(id: number): Observable<ObtenerEquipoResponse> {
     return this.http.get<ObtenerEquipoResponse>(this.baseUrl + 'Equipos/' + id);
   }

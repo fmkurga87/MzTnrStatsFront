@@ -1,28 +1,43 @@
 <div class="contenedor-filtros">
-    <form [formGroup]="busquedaEquipos" (ngSubmit)="loadHistorico()" autocomplete="off">
-        <div class="filtros">
+    <div class="filtros">
+        <form [formGroup]="busquedaEquipo1" (ngSubmit)="loadHistorico()">
             <div>
-                <input type="text"
-                    class="form-control"
-                    name="idEquipo1"
-                    formControlName="idEquipo1"
+                <input class="form-control"
+                    id="nombreEquipo1"
+                    name="nombreEquipo1"
+                    formControlName="nombreEquipo1"
                     placeholder="Equipo 1" >
+                
+                    <ul *ngIf="filteredEquipo1.length > 0">
+                    <li *ngFor="let equipo of filteredEquipo1" (click)="onSelectEquipo1(equipo)">
+                        {{ equipo.nombreEquipo }}
+                    </li>
+                </ul>
             </div>
+        </form>
+    
+        <form [formGroup]="busquedaEquipo2" (ngSubmit)="loadHistorico()">
             <div>
-                <input type="text"
-                    class="form-control"
-                    name="idEquipo2"
-                    formControlName="idEquipo2"
+                <input class="form-control"
+                    id="nombreEquipo2"
+                    name="nombreEquipo2"
+                    formControlName="nombreEquipo2"
                     placeholder="Equipo 2" >
+                
+                <ul *ngIf="filteredEquipo2.length > 0">
+                    <li *ngFor="let equipo of filteredEquipo2" (click)="onSelectEquipo2(equipo)">
+                        {{ equipo.nombreEquipo }}
+                    </li>
+                </ul>
             </div>
-            <div>
-                <button class="btn btn-success me-2" type="submit">Buscar</button>
-            </div>
+        </form>
+        <div>
+            <button class="btn btn-success me-2" type="submit" (click)="loadHistorico()">Buscar</button>
         </div>
-    </form>
+    </div>
 </div>
 
-<div *ngIf="mostrarTarjeta && busquedaEquipos.valid">
+ <div *ngIf="mostrarTarjeta">
     <app-historico-card [partidosFromFiltro]="historico"></app-historico-card>
 </div>
 
